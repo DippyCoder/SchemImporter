@@ -1,0 +1,28 @@
+name: SchemImporter
+version: '${project.version}'
+main: com.dippycoder.schemImporter.Main
+api-version: '1.21'
+authors: [ DippyCoder ]
+
+commands:
+  import:
+    description: Import a schematic from a download URL into the FAWE schematics folder
+    usage: /import <url> | /import reload
+    permission: schemimporter.import
+
+permissions:
+  schemimporter.import:
+    description: Allows using /import to download schematics
+    default: op
+
+  schemimporter.bypass.whitelist:
+    description: Allows downloading from any host, bypassing the whitelist
+    default: false
+
+  schemimporter.bypass.overwrite:
+    description: Allows overwriting existing schematic files
+    default: op
+
+  schemimporter.reload:
+    description: Allows reloading the SchemImporter config via /import reload
+    default: op
